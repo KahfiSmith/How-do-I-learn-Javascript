@@ -1,13 +1,13 @@
-let a = 1;
+let x = 1;
 
-while (a <= 100) {
-  console.log(a);
-  a++;
+while (x <= 100) {
+  console.log(x);
+  x++;
 }
 
-let b = 0;
+let y = 0;
 
 do {
-  console.log(b);
-  b++;
-} while (b <= 100);
+  console.log(y);
+  y++;
+} while (y <= 100);

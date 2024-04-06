@@ -37,3 +37,4 @@ function scoreChecker(score = 10) {
 }
 
 module.exports = scoreChecker;
+

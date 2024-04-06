@@ -1,4 +1,4 @@
-let language = "French";
+let language = "Japanese";
 let greeting = "Selamat Pagi"
 
 if(language === "English") {
