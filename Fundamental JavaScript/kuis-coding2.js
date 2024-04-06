@@ -18,7 +18,7 @@
  *
  */
 
-function scoreChecker(score = 10) {
+function scoreChecker(score) {
   let result;
 
   if (score >= 90) {
