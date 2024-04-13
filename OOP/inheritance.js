@@ -59,8 +59,16 @@ const email = new EmailService('dimas@dicoding.com');
  
 whatsapp.sendMessage('Hello', '+6289876543210');
 whatsapp.sendBroadcastMessage('Hello', ['+6289876543210', '+6282234567890']);
-whatsapp.sendDelayedMessage(); // Error
+// whatsapp.sendDelayedMessage(); // Error
  
 email.sendMessage('Hello', 'john@doe.com');
 email.sendDelayedMessage('Hello', 'john@doe.com', 3000);
-email.sendBroadcastMessage(); // Error
+// email.sendBroadcastMessage(); // Error
+
+console.log(whatsapp instanceof WhatsAppService);
+console.log(whatsapp instanceof EmailService);
+console.log(whatsapp instanceof MailService);
+ 
+console.log(email instanceof EmailService);
+console.log(email instanceof WhatsAppService);
+console.log(email instanceof MailService);
