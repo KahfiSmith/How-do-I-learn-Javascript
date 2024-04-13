@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event World</title>
+
+    <style>
+      .contents {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 2px solid black;
+        padding: 15px;
+        text-align: center;
+      }
+
+      button {
+        margin-top: 10px;
+      }
+
+      #generateButton {
+        margin-top: 5px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="contents" hidden>
+      <button id="incrementButton">Hit me up</button>
+      <h3>
+        Kamu sudah menekan tombol di atas sebanyak <span id="count">0</span>
+      </h3>
+    </div>
+
+    <script>
+      function increment() {
+        document.getElementById("count").innerText++;
+
+        if (document.getElementById("count").innerText == 7) {
+          const hiddenMessage = document.createElement("h4");
+          hiddenMessage.innerText =
+            "Selamat! Anda menemukan hadiah tersembunyi...";
+
+          const image = document.createElement("img");
+          image.setAttribute(
+            "src",
+            "https://i.pinimg.com/564x/04/be/b6/04beb656510f378e9e2c19298f95a762.jpg"
+          );
+          image.setAttribute("width", "400");
+          image.setAttribute("height", "380");
+
+          const contents = document.querySelector(".contents");
+          contents.appendChild(hiddenMessage);
+          contents.appendChild(image);
+        }
+      }
+      alert("Klik OK untuk melihat halaman website");
+
+
+      function welcome() {
+        const contents = document.querySelector(".contents");
+        contents.removeAttribute("hidden");
+      }
+
+      window.addEventListener("load", welcome);
+      document.getElementById("incrementButton").addEventListener("click", increment);
+    </script>
+  </body>
+</html>
