@@ -4,4 +4,5 @@ const coffeeStock = {
   liberica: 200,
 };
 
-module.exports = coffeeStock;
+const isCoffeeMachineReady = true;
+export { coffeeStock, isCoffeeMachineReady };
