@@ -2,14 +2,18 @@
   "name": "how-do-i-learn-javascript",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "dev": "nodemon Struktur Data/array2.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^29.7.0"
+  },
+  "dependencies": {
+    "nodemon": "^3.1.4"
   }
 }
