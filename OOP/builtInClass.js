@@ -1,5 +1,4 @@
 // date
-
 const date = new Date();
 
 const timeInJakarta = date.toLocaleString('id-ID', {

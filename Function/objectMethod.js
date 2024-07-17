@@ -1,4 +1,4 @@
-const person  = {
+const person = {
     name: "kahfi", 
     sayHello:  function  (mame) {
         console.log(`hello ${mame}`)
