@@ -16,7 +16,6 @@ let herFood = "Noodles";
 console.log(myFood);
 console.log(herFood);
 
-
 // sebelum ES6
 var a = 1;
 var b = 2;
