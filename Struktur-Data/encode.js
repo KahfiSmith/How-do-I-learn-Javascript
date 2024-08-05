@@ -11,7 +11,7 @@
 
 {   
     const value = 'kahfi&el=smith'
-    const url = 'hht://www.contoh.com/?name='
+    const url = 'http://www.contoh.com/?name='
 
     const encoded = encodeURIComponent(value)
     console.log(url + encoded)
