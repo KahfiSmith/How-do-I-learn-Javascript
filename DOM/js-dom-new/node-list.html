@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>node list</title>
+  </head>
+  <body>
+    <ul id="menu1">
+      <li id="first">first</li>
+      <li id="second">second</li>
+      <li id="third">third</li>
+    </ul>
+    <ul id="menu2">
+      <li>kahfi</li>
+      <li>el</li>
+      <li>smith</li>
+    </ul>
+
+    <script>
+      const list = document.querySelectorAll("li");
+      console.log(list);
+
+      const list1 = document.getElementById("menu1").childNodes
+      console.log(list1)
+
+      const list2 = document.getElementById("menu2").childNodes
+      console.log(list2)
+
+    </script>
+  </body>
+</html>
