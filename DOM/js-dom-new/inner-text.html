@@ -12,11 +12,19 @@
         </script>
         <b>kahfi el smith</b>
     </p>
+    <p id="content2">
+
+    </p>
 
     <script>
         const content = document.getElementById("content");
         console.log(content.textContent);
         console.log(content.innerText);
+        console.log(content.innerHTML);
+
+        const content2 = document.getElementById("content2");
+        content2.innerHTML = "<h1>kahfi el smith</h1><p>sedang belajar js dom</p>"
+
     </script>
 </body>
 </html>
