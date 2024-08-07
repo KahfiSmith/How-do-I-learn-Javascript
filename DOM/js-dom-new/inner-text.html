@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inner text</title>
+</head>
+<body>
+    <p id="content">
+        <script>
+            console.log("hello world")
+        </script>
+        <b>kahfi el smith</b>
+    </p>
+
+    <script>
+        const content = document.getElementById("content");
+        console.log(content.textContent);
+        console.log(content.innerText);
+    </script>
+</body>
+</html>
