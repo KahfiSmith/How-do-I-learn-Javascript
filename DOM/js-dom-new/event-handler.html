@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event target</title>
+  </head>
+  <body>
+    <input id="clickMe" type="button" value="Click me!" />
+    <input id="clickMe2" type="button" value="Click me!" />
+    <script>
+      const button = document.getElementById("clickMe");
+      button.addEventListener("click", () => {
+        button.setAttribute("value", "already click me!");
+      });
+      button.addEventListener("click", () => {
+        console.log("button sudah diklik");
+      });
+
+      const button2 = document.getElementById("clickMe2");
+      clickMe2.onclick = () => {
+        button2.setAttribute("value", "already click me!");
+        console.log("button sudah diklik");
+      };
+    </script>
+  </body>
+</html>
