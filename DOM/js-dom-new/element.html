@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>element</title>
+  </head>
+  <body>
+    <div id="content" class="content">
+      <h1 id="title">belajar js</h1>
+      <p id="desc">selamat belajar js dom</p>
+    </div>
+
+    <div id="page">
+   
+    </div>
+
+    <script>
+      const content = document.getElementById("content");
+      console.log(content.id);
+      console.log(content.className);
+      console.log(content.tagName);
+
+      document.getElementById("title").innerText = "belajar js dom";
+      document.getElementById("desc").remove();
+
+      const page = document.getElementById("page")
+
+      const title = document.createElement("p")
+      title.textContent = "sudah saatnya mulai belajar js dom"
+      page.appendChild(title)
+    </script>
+  </body>
+</html>
