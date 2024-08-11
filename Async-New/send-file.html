@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>send file</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >username <input type="text" id="username" name="username"
+      /></label>
+      <label for="profile"
+        >profile <input type="file" id="profile" name="profile"
+      /></label>
+      <br />
+      <label for="password"
+        >password <input type="password" id="password" name="password"
+      /></label>
+      <br />
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <script>
+      const doLogin = () => {
+        const ajax = new XMLHttpRequest();
+        ajax.open("POST", "");
+        ajax.onload = () => {
+          const response = document.getElementById("response");
+          response.innerText = ajax.responseText;
+        };
+
+        const form = FormData();
+        form.append("username", document.getElementById("username").value);
+
+        const files = document.getElementById("profile").files;
+        const firstFile = files[0];
+
+        form.append("profile", firstFile);
+
+        ajax.send(form);
+      };
+
+      document.getElementById("login").click = doLogin;
+    </script>
+  </body>
+</html>
