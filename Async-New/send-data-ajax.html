@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>send data ajax</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >username <input type="text" id="username" name="username"
+      /></label>
+      <br />
+      <label for="password"
+        >password <input type="password" id="password" name="password"
+      /></label>
+      <br />
+      <input type="button" id="login" value="login" />
+    </form>
+
+    <script>
+      const doLogin = () => {
+          const ajax = new XMLHttpRequest();
+          ajax.open("POST", "");
+          ajax.onload = () => {
+            const response = document.getElementById("response");
+              response.innerText = ajax.responseText;
+          }
+
+          ajax.setRequestHeader("Content-Type", "application/json");
+          ajax.send(JSON.stringify({
+              username: document.getElementById("username").value,
+              password: document.getElementById("password").value
+          }));
+      }
+
+      document.getElementById("login").addEventListener("click", doLogin);
+    </script>
+  </body>
+</html>
