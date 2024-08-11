@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>id:</td>
+          <td id="id"></td>
+        </tr>
+        <tr>
+          <td>name:</td>
+          <td id="name"></td>
+        </tr>
+        <tr>
+          <td>price</td>
+          <td id="price"></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const promise = new Promise((resolve, reject) => {
+        ajax.open("GET", "api/product.json");
+        ajax.onload = () => {
+          if (ajax.status === 200) {
+            resolve(ajax.responseText);
+          } else {
+            reject(ajax.responseText);
+          }
+        };
+        ajax.send();
+      });
+
+      const prod = Promise.all(
+        getProduct("product1"),
+        getProduct("product2"),
+        getProduct("product3")
+      );
+
+      prod.then((products) => {
+        console.log(products);
+      });
+
+      //   getProduct()
+      //     .then((response) => {
+      //       return JSON.parse(response);
+      //     })
+      //     .then((json) => {
+      //       document.getElementById("id").textContent = json.id;
+      //       document.getElementById("name").textContent = json.name;
+      //       document.getElementById("price").textContent = json.price;
+      //     })
+      //     .catch((error) => {
+      //       document.getElementById("id").textContent = error;
+      //       document.getElementById("name").textContent = error;
+      //       document.getElementById("price").textContent = error;
+      //     })
+      //     .finally(() => {
+      //       console.log("done");
+      //     });
+    </script>
+  </body>
+</html>
