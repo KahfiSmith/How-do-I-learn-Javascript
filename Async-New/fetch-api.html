@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch api</title>
+  </head>
+  <body>
+    <form>
+      <label for="username"
+        >username <input type="text" id="username" name="username"
+      /></label>
+      <br />
+      <label for="password"
+        >password <input type="password" id="password" name="password"
+      /></label>
+      <br />
+      <input type="button" id="login" value="login" />
+    </form>
+    <script>
+      const request = new Request("api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username: document.getElementById("username").value,
+          password: document.getElementById("password").value,
+        }),
+      });
+
+      const response = fetch(request);
+      response
+        .then((response) => response.json())
+        .then((json) => {
+          document.getElementById("response").textContent = json.success;
+        })
+        .catch((error) => {
+          document.getElementById("response").textContent = error;
+        });
+    </script>
+  </body>
+</html>
