@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>web worker</title>
+  </head>
+  <body>
+    <button id="buttonTask"></button>
+
+    <script>
+      const worker = new Worker("worker.js");
+      worker.addEventListener("message", (message) => {
+        console.log(meesage.data);
+      });
+
+      document.getElementById("buttonTask").addEventListener("click", () => {
+        worker.postMessage(1000);
+      });
+    </script>
+  </body>
+</html>
